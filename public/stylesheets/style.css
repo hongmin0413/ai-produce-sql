@@ -1,0 +1,87 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    background: url("https://res.cloudinary.com/practicaldev/image/fetch/s--ouQLsaYd--/c_imagga_scale,f_auto,fl_progressive,h_900,q_auto,w_1600/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/himk93z9942zrhvj9arv.jpg") center / cover;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+}
+
+::placeholder {
+    font-size: 16px;
+}
+
+.card {
+    max-width: 400px;
+    border: 1px solid black;
+    border-radius: 16px;
+    background-color: #000000EB;
+    padding: 20px 40px;
+}
+
+.card-img {
+    width: 150px;
+    height: 100px;
+}
+
+.card-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 24px;
+}
+
+.card-text {
+    font-size: 20px;
+}
+
+.card-inputModel {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card-input {
+    margin-right: 8px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: none;
+}
+
+.card-btn {
+    background-color: #105522;
+    color: white;
+    padding: 8px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+.card-btn:hover {
+    opacity: .8;
+}
+
+@media(max-width: 420px) {
+    .cardForm {
+        padding: 5%;
+    }
+
+    .card {
+        padding: 10px 12px;
+    }
+
+    .card-input {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .card-btn {
+        margin-top: 10px;
+    }
+}

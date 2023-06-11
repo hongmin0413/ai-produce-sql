@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SQL語法產生器</title>
+        <link rel='stylesheet' href='/stylesheets/style.css' />
+    </head>
+    <body class="body">
+        <form class="cardForm" action="/" method="post">
+            <div class="card">
+                <img class="card-img" src="https://www.foolegg.com/images/archive/2021/10/MySQL_logo.png" alt="MySQL_logo">
+                <h1 class="card-title">SQL語法產生器</h1>
+                <p class="card-text">
+                    <% if (description.length) { %>
+                        <%= description %>
+                    <% } else { %>
+                        <%= 'sql = ?' %>
+                    <% } %>
+                </p>
+                <div class="card-inputModel">
+                    <input type="text" name="description" class="card-input" placeholder="請輸入要查詢的條件" />
+                    <button type="submit" class="card-btn">送出</button>
+                </div>
+            </div>
+        </form>
+    </body>
+</html>
