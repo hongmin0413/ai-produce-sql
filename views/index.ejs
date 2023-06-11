@@ -13,12 +13,18 @@
                 <img class="card-img" src="https://www.foolegg.com/images/archive/2021/10/MySQL_logo.png" alt="MySQL_logo">
                 <h1 class="card-title">SQL語法產生器</h1>
                 <p class="card-text">
-                    <% if (description.length) { %>
+                    <% if(description.length) { %>
                         <%= description %>
-                    <% } else { %>
+                    <% }else { %>
                         <%= 'sql = ?' %>
                     <% } %>
                 </p>
+                <% if(description.length) { %>
+                    <div class="copyModel">
+                        <button type="button" class="card-btn-copy" data-clipboard-target=".card-text">copy</button>
+                        <div class="hint">複製成功</div>
+                    </div>
+                <% } %>
                 <div class="card-inputModel">
                     <input type="text" name="description" class="card-input" placeholder="請輸入要查詢的條件" />
                     <button type="submit" class="card-btn">送出</button>
@@ -26,4 +32,24 @@
             </div>
         </form>
     </body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.11/clipboard.min.js"></script>
+    <script>
+        const clipboard = new ClipboardJS(".card-btn-copy");
+
+        clipboard.on("success", function(e) {
+            e.clearSelection();
+            //複製完成的提示動畫
+            let hintObj = document.querySelector(".hint");
+            hintObj.style.display = "block";
+            hintObj.style.animation = "moveUp 1s";
+            setTimeout(() => {
+                hintObj.style = "";
+            }, 1000);
+        });
+
+        clipboard.on("error", function(e) {
+            console.error("Action: ", e.action);
+            console.error("Trigger: ", e.trigger);
+        });
+    </script>
 </html>

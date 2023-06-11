@@ -38,10 +38,51 @@ body {
 }
 
 .card-text {
+    margin: 5px 0;
     font-size: 20px;
 }
 
+.copyModel {
+    position: relative;
+}
+
+.card-btn-copy {
+    background-color: #839086e1;
+    color: white;
+    padding: 8px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+.card-btn-copy:hover {
+    opacity: .8;
+}
+
+.hint {
+    display: none;
+    padding: 10px;
+    position: absolute;
+    font-size: 16px;
+    background-color: #5E3C0A;
+    border-radius: 4px;
+    z-index: 1;
+    top: -70%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@keyframes moveUp {
+    from {
+        top: -70%;
+    }
+    to {
+        top: -90%;
+    }
+}
+
 .card-inputModel {
+    margin-top: 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -69,7 +110,7 @@ body {
 
 @media(max-width: 420px) {
     .cardForm {
-        padding: 5%;
+        padding: 3%;
     }
 
     .card {
